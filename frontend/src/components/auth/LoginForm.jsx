@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { motion } from 'framer-motion';
+
 const LoginForm = () => {
   const [csrfToken, setCsrfToken] = useState('');
   const [usernameInput, setUsernameInput] = useState('');
@@ -38,7 +40,12 @@ const LoginForm = () => {
   return (
     <div className="flex h-[calc(100vh-56px)] w-full bg-white font-sans text-gray-900 overflow-hidden">
       {/* Left Pane - Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center overflow-y-auto px-6 py-10 lg:px-16 xl:px-24">
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="w-full lg:w-1/2 flex flex-col justify-center overflow-y-auto px-6 py-10 lg:px-16 xl:px-24"
+      >
         <div className="w-full max-w-sm mx-auto">
           <div className="flex items-center gap-2 mb-10">
             <div className="w-8 h-8 bg-teal-900 rounded flex items-center justify-center text-white font-bold text-lg">
@@ -55,7 +62,11 @@ const LoginForm = () => {
           </header>
 
           {errors.length > 0 && (
-            <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-md">
+            <motion.div 
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-md overflow-hidden"
+            >
               <div className="flex items-center mb-1">
                 <svg className="w-4 h-4 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path></svg>
                 <span className="text-sm font-bold text-red-800 uppercase tracking-wide">Error</span>
@@ -65,7 +76,7 @@ const LoginForm = () => {
                   <li key={i} className="text-xs text-red-700 font-medium leading-relaxed">{err}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           )}
 
           <form className="flex flex-col gap-5 w-full" method="POST" action="">
@@ -109,10 +120,15 @@ const LoginForm = () => {
             Don't have an Account? <a href={registerUrl} className="text-teal-700 hover:text-teal-900 font-bold transition-colors no-underline">Sign Up</a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right Pane - Marketing/Info Banner */}
-      <div className="hidden lg:flex w-1/2 bg-[#0f3d3a] p-10 xl:p-16 flex-col justify-center relative overflow-y-auto">
+      <motion.div 
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        className="hidden lg:flex w-1/2 bg-[#0f3d3a] p-10 xl:p-16 flex-col justify-center relative overflow-y-auto"
+      >
         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-teal-600/30 to-transparent opacity-80 pointer-events-none"></div>
         
         <div className="relative z-10 flex-col max-w-xl mx-auto w-full pb-10">
@@ -156,7 +172,7 @@ const LoginForm = () => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

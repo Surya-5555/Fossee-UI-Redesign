@@ -4,12 +4,42 @@
 		Register
 	{% endblock %}
 
+{% block footer %}{% endblock %}
+
+{% block extra-custom-scripts %}
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    .base-content {
+        padding-top: 56px !important;
+        padding-bottom: 0 !important;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     <div id="django-form-data" style="display: none;">
         <div id="django-csrf">{% csrf_token %}</div>
+        <div id="django-urls" data-login="{% url 'workshop_app:login' %}"></div>
         <table id="django-register-form">
             {{ form.as_table }}
         </table>
+    </div>
+
+    <!-- Django backend errors rendered natively but hidden from layout to be handled by React -->
+    <div id="django-errors" style="display: none;">
+        {% if form.errors or form.non_field_errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="error-msg" data-field="{{ field.name }}">{{ error|escape }}</div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="error-msg" data-field="non_field">{{ error|escape }}</div>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <!-- Vite Dev Server Extracted Integration -->
