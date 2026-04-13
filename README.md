@@ -26,15 +26,11 @@ https://github.com/Surya-5555/Fossee-UI-Redesign
 
 ### Before
 
-Add screenshot here
-
 <img width="1600" height="760" alt="image" src="https://github.com/user-attachments/assets/9312b8a9-28bc-4b91-b317-bb6da7f422c2" />
 
 
 
 ### After
-
-Add screenshot here
 
 <img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/8aa009fe-a86a-47b2-a9d0-c78baa173035" />
 
