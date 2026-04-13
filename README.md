@@ -14,8 +14,10 @@ One thing that took a lot of time in the beginning was wiring the Django backend
 
 ## Repository
 
-Add your public repository link here
+Initial Commits
+<img width="1916" height="971" alt="image" src="https://github.com/user-attachments/assets/e4753a86-3477-4ce1-95fe-d52ff0fb9fdd" />
 
+Updated Commits
 https://github.com/Surya-5555/Fossee-UI-Redesign
 
 ---
@@ -27,7 +29,6 @@ https://github.com/Surya-5555/Fossee-UI-Redesign
 ### Before
 
 <img width="1600" height="760" alt="image" src="https://github.com/user-attachments/assets/9312b8a9-28bc-4b91-b317-bb6da7f422c2" />
-
 
 
 ### After
