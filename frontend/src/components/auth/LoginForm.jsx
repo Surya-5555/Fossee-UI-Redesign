@@ -10,6 +10,10 @@ const LoginForm = () => {
   const [resetUrl, setResetUrl] = useState('/password_reset/');
   const [errors, setErrors] = useState([]);
 
+  /**
+   * Hybrid Data Extraction: Synchronizes server-rendered Django form state into the React lifecycle.
+   * This preserves CSRF integrity and native backend validation while enabling modern UI rendering.
+   */
   useEffect(() => {
     const csrfEl = document.getElementById('django-csrf');
     const usernameEl = document.getElementById('django-username');
@@ -30,6 +34,7 @@ const LoginForm = () => {
       setResetUrl(urlsEl.getAttribute('data-reset') || '/password_reset/');
     }
 
+    /* Extraction of backend field-level and non-field errors into unified state */
     if (errorsContainer) {
       const errorEls = errorsContainer.querySelectorAll('.error-msg');
       const errorMsgs = Array.from(errorEls).map(el => el.textContent);
@@ -39,7 +44,10 @@ const LoginForm = () => {
 
   return (
     <div className="flex h-[calc(100vh-56px)] w-full bg-white font-sans text-gray-900 overflow-hidden">
-      {/* Left Pane - Form */}
+      {/* 
+          Motion Orchestration: Pane-slide entry masks the standard Django page-reload jump.
+          Duration and easing optimized for perceived performance. 
+      */}
       <motion.div 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

@@ -8,6 +8,11 @@ const RegisterForm = () => {
   const [loginUrl, setLoginUrl] = useState('/workshop/login/');
   const [errors, setErrors] = useState([]);
 
+  /**
+   * Django-to-React Synchronization: Parses standard Django table-form HTML into React state.
+   * This allows the backend to define the form schema (First Name, Institute, etc.) 
+   * while React controls the visual presentation.
+   */
   useEffect(() => {
     const csrfEl = document.getElementById('django-csrf');
     const formEl = document.getElementById('django-register-form');
@@ -37,7 +42,10 @@ const RegisterForm = () => {
 
   return (
     <div className="flex h-[calc(100vh-56px)] w-full bg-white font-sans text-gray-900 overflow-hidden">
-      {/* Left Pane - Form */}
+      {/* 
+          Form Pane Config: Using `justify-start` with top-padding to ensure long forms (registration) 
+          are scrollable from the absolute top. `justify-center` would cause top-clipping on overflow.
+      */}
       <motion.div 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
