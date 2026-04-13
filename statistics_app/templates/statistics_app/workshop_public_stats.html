@@ -2,6 +2,19 @@
 
 {% block title %} Statistics {% endblock %}
 
+{% block extra-custom-scripts %}
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    .base-content {
+        padding-top: 56px !important;
+        padding-bottom: 0 !important;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <div id="django-stats-data" style="display:none;">
     <div id="django-form-clear-url" data-url="{% url 'statistics_app:public' %}"></div>
