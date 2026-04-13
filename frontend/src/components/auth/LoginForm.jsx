@@ -74,11 +74,11 @@ const LoginForm = () => {
             <div className="flex flex-col gap-1.5 w-full">
               <label className="text-sm font-semibold text-gray-700 text-left" htmlFor="id_username">Email / Username</label>
               <div className="relative">
-                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-teal-700/60 pointer-events-none">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-teal-800/50 z-10 pointer-events-none">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                 </span>
                 <div
-                  className="w-full [&>input]:w-full [&>input]:box-border [&>input]:py-2.5 [&>input]:pl-11 [&>input]:pr-4 [&>input]:text-sm [&>input]:border [&>input]:border-gray-200 [&>input]:rounded-lg [&>input]:bg-white [&>input]:text-gray-900 [&>input]:focus:outline-none [&>input]:focus:border-teal-700 [&>input]:focus:ring-1 [&>input]:focus:ring-teal-700 [&>input]:transition-all"
+                  className="w-full [&>input]:w-full [&>input]:box-border [&>input]:py-2.5 [&>input]:!pl-12 [&>input]:pr-4 [&>input]:text-sm [&>input]:border [&>input]:border-gray-200 [&>input]:rounded-lg [&>input]:bg-white [&>input]:text-gray-900 [&>input]:focus:outline-none [&>input]:focus:border-teal-700 [&>input]:focus:ring-1 [&>input]:focus:ring-teal-700 [&>input]:transition-all"
                   dangerouslySetInnerHTML={{ __html: usernameInput }}
                 />
               </div>
@@ -90,11 +90,11 @@ const LoginForm = () => {
                 <a href={resetUrl} className="text-xs font-bold text-teal-700 hover:text-teal-900 transition-colors no-underline tracking-wide">Forgot Password?</a>
               </div>
               <div className="relative">
-                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-teal-700/60 pointer-events-none">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-teal-800/50 z-10 pointer-events-none">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 </span>
                 <div
-                  className="w-full [&>input]:w-full [&>input]:box-border [&>input]:py-2.5 [&>input]:pl-11 [&>input]:pr-4 [&>input]:text-sm [&>input]:border [&>input]:border-gray-200 [&>input]:rounded-lg [&>input]:bg-white [&>input]:text-gray-900 [&>input]:focus:outline-none [&>input]:focus:border-teal-700 [&>input]:focus:ring-1 [&>input]:focus:ring-teal-700 [&>input]:transition-all"
+                  className="w-full [&>input]:w-full [&>input]:box-border [&>input]:py-2.5 [&>input]:!pl-12 [&>input]:pr-4 [&>input]:text-sm [&>input]:border [&>input]:border-gray-200 [&>input]:rounded-lg [&>input]:bg-white [&>input]:text-gray-900 [&>input]:focus:outline-none [&>input]:focus:border-teal-700 [&>input]:focus:ring-1 [&>input]:focus:ring-teal-700 [&>input]:transition-all"
                   dangerouslySetInnerHTML={{ __html: passwordInput }}
                 />
               </div>
