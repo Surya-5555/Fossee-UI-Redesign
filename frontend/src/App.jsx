@@ -4,6 +4,8 @@ import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
 import PasswordResetForm from './components/auth/PasswordResetForm';
 import PasswordResetDone from './components/auth/PasswordResetDone';
+import PasswordResetConfirmForm from './components/auth/PasswordResetConfirmForm';
+import PasswordResetComplete from './components/auth/PasswordResetComplete';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/workshop/register/" element={<RegisterForm />} />
         <Route path="/reset/password_reset/" element={<PasswordResetForm />} />
         <Route path="/reset/password_reset/done/" element={<PasswordResetDone />} />
+        <Route path="/reset/:uidb64/:token/" element={<PasswordResetConfirmForm />} />
+        <Route path="/reset/done/" element={<PasswordResetComplete />} />
       </Routes>
     </BrowserRouter>
   );
