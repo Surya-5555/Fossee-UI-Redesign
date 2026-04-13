@@ -4,6 +4,21 @@
     Login
 {% endblock %}
 
+{% block footer %}{% endblock %}
+
+{% block extra-custom-scripts %}
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+    .base-content {
+        padding-top: 56px !important;
+        padding-bottom: 0 !important;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
     <div id="django-form-data" style="display: none;">
         <div id="django-csrf">{% csrf_token %}</div>
@@ -12,33 +27,19 @@
         <div id="django-urls" data-register="{% url 'workshop_app:register' %}" data-reset="{% url 'password_reset' %}"></div>
     </div>
 
-    <!-- Django backend errors rendered natively to ensure security constraints remain functional -->
-    {% if form.errors %}
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <div class="alert alert-dismissible alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="fa fa-close"></i>
-                            </button>
-                            <strong>{{ error|escape }}</strong>
-                        </div>
-                    {% endfor %}
+    <!-- Django backend errors rendered natively but hidden from layout to be handled by React -->
+    <div id="django-errors" style="display: none;">
+        {% if form.errors or form.non_field_errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="error-msg" data-field="{{ field.name }}">{{ error|escape }}</div>
                 {% endfor %}
-                {% for error in form.non_field_errors %}
-                    <div class="alert alert-dismissible alert-danger">
-                        <button type="button" class="close" data-dismiss="alert">
-                            <i class="fa fa-close"></i>
-                        </button>
-                        <strong>{{ error|escape }}</strong>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="error-msg" data-field="non_field">{{ error|escape }}</div>
+            {% endfor %}
+        {% endif %}
     </div>
-    {% endif %}
 
     <!-- Vite Dev Server Extracted Integration -->
     <div id="root"></div>
