@@ -18,7 +18,7 @@ Initial Commits
 <img width="1916" height="971" alt="image" src="https://github.com/user-attachments/assets/e4753a86-3477-4ce1-95fe-d52ff0fb9fdd" />
 
 Updated Commits
-https://github.com/Surya-5555/Fossee-UI-Redesign
+<img width="1917" height="968" alt="image" src="https://github.com/user-attachments/assets/814f0cd8-2f7e-4d41-a28d-aee611b3e4df" />
 
 ---
 
