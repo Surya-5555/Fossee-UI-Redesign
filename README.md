@@ -147,6 +147,6 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 
-```bash
+
 cd frontend
 npm run dev
