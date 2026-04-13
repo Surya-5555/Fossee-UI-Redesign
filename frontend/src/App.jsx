@@ -6,6 +6,7 @@ import PasswordResetForm from './components/auth/PasswordResetForm';
 import PasswordResetDone from './components/auth/PasswordResetDone';
 import PasswordResetConfirmForm from './components/auth/PasswordResetConfirmForm';
 import PasswordResetComplete from './components/auth/PasswordResetComplete';
+import WorkshopPublicStats from './components/statistics/WorkshopPublicStats';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/reset/password_reset/done/" element={<PasswordResetDone />} />
         <Route path="/reset/:uidb64/:token/" element={<PasswordResetConfirmForm />} />
         <Route path="/reset/done/" element={<PasswordResetComplete />} />
+        <Route path="/statistics/public/" element={<WorkshopPublicStats />} />
+        <Route path="/statistics/public" element={<WorkshopPublicStats />} />
       </Routes>
     </BrowserRouter>
   );
