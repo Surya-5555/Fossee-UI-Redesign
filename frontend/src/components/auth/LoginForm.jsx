@@ -4,11 +4,14 @@ const LoginForm = () => {
   const [csrfToken, setCsrfToken] = useState('');
   const [usernameInput, setUsernameInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const [registerUrl, setRegisterUrl] = useState('/workshop/register/');
+  const [resetUrl, setResetUrl] = useState('/password_reset/');
 
   useEffect(() => {
     const csrfEl = document.getElementById('django-csrf');
     const usernameEl = document.getElementById('django-username');
     const passwordEl = document.getElementById('django-password');
+    const urlsEl = document.getElementById('django-urls');
 
     // Fallbacks to render standard inputs on Vite localhost
     const mockCsrf = '<input type="hidden" name="csrfmiddlewaretoken" value="dev_token" />';
@@ -18,6 +21,11 @@ const LoginForm = () => {
     setCsrfToken(csrfEl ? csrfEl.innerHTML : mockCsrf);
     setUsernameInput(usernameEl ? usernameEl.innerHTML : mockUsername);
     setPasswordInput(passwordEl ? passwordEl.innerHTML : mockPassword);
+    
+    if (urlsEl) {
+      setRegisterUrl(urlsEl.getAttribute('data-register') || '/workshop/register/');
+      setResetUrl(urlsEl.getAttribute('data-reset') || '/password_reset/');
+    }
   }, []);
 
   return (
@@ -53,8 +61,8 @@ const LoginForm = () => {
         </form>
 
         <div className="mt-6 flex flex-col items-center gap-3 text-sm">
-          <a href="/workshop/register/" className="text-blue-600 hover:text-blue-800 hover:underline transition-colors">New around here? Sign up</a>
-          <a href="/password_reset/" className="text-blue-600 hover:text-blue-800 hover:underline transition-colors">Forgot password?</a>
+          <a href={registerUrl} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors">New around here? Sign up</a>
+          <a href={resetUrl} className="text-blue-600 hover:text-blue-800 hover:underline transition-colors">Forgot password?</a>
         </div>
       </main>
     </div>

@@ -9,6 +9,7 @@
         <div id="django-csrf">{% csrf_token %}</div>
         <div id="django-username">{{ form.username }}</div>
         <div id="django-password">{{ form.password }}</div>
+        <div id="django-urls" data-register="{% url 'workshop_app:register' %}" data-reset="{% url 'password_reset' %}"></div>
     </div>
 
     <!-- Django backend errors rendered natively to ensure security constraints remain functional -->
