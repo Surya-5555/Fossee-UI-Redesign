@@ -12,21 +12,15 @@ One thing that took a lot of time in the beginning was wiring the Django backend
 
 ---
 
-## Live Project
-
-Add your deployed link here
-
-[ Live Demo Link ]
-
----
-
 ## Repository
 
 Add your public repository link here
 
-[ GitHub Repository Link ]
+https://github.com/Surya-5555/Fossee-UI-Redesign
 
 ---
+
+
 
 ## Before and After Screenshots
 
@@ -34,6 +28,7 @@ Add your public repository link here
 
 Add screenshot here
 
+<img width="1600" height="760" alt="image" src="https://github.com/user-attachments/assets/9312b8a9-28bc-4b91-b317-bb6da7f422c2" />
 
 
 
@@ -156,6 +151,6 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 
+```bash
 cd frontend
 npm run dev
-
